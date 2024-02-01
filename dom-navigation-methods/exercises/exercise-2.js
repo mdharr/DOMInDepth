@@ -8,3 +8,5 @@
     3. What are a few different ways to get to this
        Element? Are some methods better than others?
 */
+
+document.body.querySelector('.other-projects').children[6].firstElementChild.firstElementChild.nextElementSibling.firstElementChild
