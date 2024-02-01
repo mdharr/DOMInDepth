@@ -7,3 +7,8 @@
     3. What CSS selector might make the most sense to 
        use for the logo and why?
 */
+
+const result = document.querySelector(".lnXdpd")
+console.log(result)
+
+// used class to target the logo
