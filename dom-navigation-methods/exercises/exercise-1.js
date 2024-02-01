@@ -9,3 +9,7 @@
 
     4. Select the <a> tag that links to "Jim", the CEO
 */
+
+document.body.querySelector('.clfooter').firstElementChild.nextElementSibling.firstElementChild
+document.body.querySelector('tbody').firstElementChild.lastElementChild.firstElementChild
+document.body.querySelector('tbody').children[2].firstElementChild.nextElementSibling.firstElementChild
