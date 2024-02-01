@@ -1,0 +1,10 @@
+// console.log(document.body.parentElement)
+// console.log(document.querySelector('p').parentElement)
+
+console.log(document.body)
+console.log(document.body.children)
+console.log(document.body.firstElementChild)
+console.log(document.body.children[0].nextElementSibling)
+console.log(document.body.children[3].previousElementSibling)
+console.log(document.body.lastElementChild.previousElementSibling)
+console.log(document.querySelector('span').parentElement)
