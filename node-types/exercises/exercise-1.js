@@ -14,3 +14,8 @@
            "$0" in the console tab to refer to it
            (Eg: $0.nodeType and $0.nodeName)
 */
+
+// found Text Node inside of noscript tag
+// found Comment Node indicating beginning and end of special features
+// found Element Node as body html element
+// found DocumentType Node as the <!DOCTYPE html> at the beginning of the html document
