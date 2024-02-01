@@ -13,3 +13,5 @@
 
     4. Try step 2-3 with another Element or Node type
 */
+
+// children, class list, and prototype chain all seem very useful
