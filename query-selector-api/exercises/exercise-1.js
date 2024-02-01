@@ -8,3 +8,6 @@
     3. What CSS selector might make the most sense to 
        use for this and why?
 */
+
+const firstImgElement = document.querySelector(".thumb img")
+console.log(firstImgElement)
