@@ -18,3 +18,9 @@
        - The p tag
        - The span tag
 */
+
+console.log(document.head.lastElementChild)
+console.log(document.body.lastElementChild.previousElementSibling.previousSibling.previousSibling)
+console.log(document.body.lastElementChild.previousElementSibling.childNodes[0])
+console.log(document.body.lastElementChild.previousElementSibling)
+console.log(document.body.lastElementChild.previousElementSibling.firstElementChild)
