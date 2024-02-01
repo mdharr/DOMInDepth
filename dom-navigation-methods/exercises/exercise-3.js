@@ -13,3 +13,7 @@
            "virtually" from inside the dev tools? (not
             actually manually clicking it)
 */
+
+// document.querySelector('[aria-label="More Categories"')
+document.querySelector('.vl-flyout-nav__container').children[3].children[2].firstElementChild.lastElementChild.lastElementChild.lastElementChild.firstElementChild
+document.querySelector('.vl-flyout-nav__container').children[3].children[2].firstElementChild.lastElementChild.lastElementChild.lastElementChild.firstElementChild.click()
