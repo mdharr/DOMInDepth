@@ -17,3 +17,10 @@
             querySelector('...').
             querySelectorAll('...')
 */
+
+// can just shorten the query selector chain down to `.preview`
+const navLinks = document.querySelectorAll(".base #main #thumbs .thumb-listing-page ul li .thumb .preview")
+console.log(navLinks)
+
+const hrefs = [...navLinks].map(link => link.getAttribute('href'))
+console.log(hrefs)
