@@ -11,3 +11,5 @@
     *BONUS: MDN has a link to the DOM specification.
             Can you find the node types in here too?
 */
+
+// Node Types: 5, 6, and 12 are legacy and no longer used
