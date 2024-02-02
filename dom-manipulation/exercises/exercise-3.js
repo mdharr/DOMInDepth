@@ -1,3 +1,5 @@
+document.body.style.backgroundColor = 'rgb(40 40 40)'
+document.body.style.color = '#fff'
 /*
     1. Create an HTML document that has the following
        Elements:
@@ -13,3 +15,5 @@
        - Replace the <h1> tag with an <h2> tag but
          preserve original text inside
 */
+const originalText = document.body.querySelector('h1').textContent
+document.body.querySelector('h1').outerHTML = `<h2>${originalText}</h2>`
