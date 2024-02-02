@@ -1,3 +1,5 @@
+document.body.style.backgroundColor = 'rgb(40 40 40)'
+document.body.style.color = '#fff'
 /*
     1. Create an HTML document that has the following
        Elements:
@@ -14,3 +16,6 @@
 
     4. How would you change the Comment Node's text?
 */
+
+document.body.querySelector('p').textContent = 'Paragraph Text Changed'
+document.body.firstElementChild.nextSibling.nextSibling.textContent = 'Comment Text Changed'
