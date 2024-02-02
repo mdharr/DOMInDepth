@@ -1,3 +1,5 @@
+document.body.style.backgroundColor = 'rgb(40 40 40)'
+document.body.style.color = '#fff'
 /*
     1. Create an HTML document that has the following
        Element in it:
@@ -16,3 +18,6 @@
 
     4. Refresh the page to test it works
 */
+setTimeout(() => {
+   document.body.innerHTML = '<nav><ul><li>Home 🏠</li><li>Shop 🛒</li><li>About 📝</li></ul></nav>'
+}, 3000)
