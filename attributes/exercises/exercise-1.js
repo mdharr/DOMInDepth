@@ -1,3 +1,5 @@
+document.body.style.backgroundColor = '#282828'
+document.body.style.color = '#fff'
 /*
     1. Create a new HTML file that has the following
        Elements in it:
@@ -16,3 +18,6 @@
     4. Verify the changes in the DOM/Elements tab as well
        as visually in the UI
 */
+document.querySelector('input').setAttribute('type', 'checkbox')
+document.querySelector('input').toggleAttribute('checked')
+// document.querySelector('input').removeAttribute('checked')
