@@ -1,3 +1,5 @@
+document.body.style.backgroundColor = '#282828'
+document.body.style.color = '#fff'
 /*
     1. Create a new HTML file that has the following
        Elements in it:
@@ -19,3 +21,5 @@
     * We will get deeper in to Events in later videos
     ** These event handler attributes are bad practice!
 */
+
+document.querySelector('button').setAttribute('onclick', 'console.log("Why, hello there!")')
