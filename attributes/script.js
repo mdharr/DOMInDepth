@@ -47,4 +47,4 @@ function revealName(name) {
     if (name.length > 0) cycleLetter(0)
 }
 
-revealName('Supercalifragilisticexpialidocious')
+// revealName('Supercalifragilisticexpialidocious')
