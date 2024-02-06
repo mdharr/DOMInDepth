@@ -54,9 +54,11 @@ const setColor = (color) => {
    const green = 'rgb(0, 183, 77)'
    const yellow = 'rgb(247, 227, 172)'
    const red = 'rgb(193, 52, 56)'
-   color === green ? document.querySelector('h1').style.color = yellow
-   : color === yellow ? document.querySelector('h1').style.color = red
-   : document.querySelector('h1').style.color = green
+   color === green 
+      ? document.querySelector('h1').style.color = yellow
+      : color === yellow 
+      ? document.querySelector('h1').style.color = red
+      : document.querySelector('h1').style.color = green
 }
 
 const resetColor = () => {
