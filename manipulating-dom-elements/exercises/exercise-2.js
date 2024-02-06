@@ -1,3 +1,5 @@
+document.body.style.backgroundColor = "#282828"
+document.body.style.color = "#fff"
 /*
     1. Create an HTML file with the a <head>
        tag containing a <title> with some text
@@ -27,3 +29,32 @@
        dev tools to confirm visually and in the DOM that
        the elements are changings as expected
 */
+
+function createParagraph(text, attributes) {
+   const p = document.createElement('p')
+   p.textContent = text
+   Object.keys(attributes).forEach(attr => {
+      p.setAttribute(attr, attributes[attr])
+   })
+   document.body.append(p)
+}
+
+function createCloneParagraph(text, attributes) {
+   const p = document.createElement('p')
+   p.textContent = text
+   Object.keys(attributes).forEach(attr => {
+      p.setAttribute(attr, attributes[attr])
+   })
+   return p
+}
+
+createParagraph('Good morning', {id: 'early', class: 'breakfast'})
+createParagraph('Good afternoon', {id: 'midday', class: 'lunch'})
+createParagraph('Good evening', {id: 'late', class: 'dinner'})
+
+// const clone = document.querySelector('#early').cloneNode(true)
+// clone.id = 'early-copy'
+// document.body.append(clone)
+// document.body.querySelector('#early').remove()
+const replacement = createCloneParagraph('Insomnia', {id: 'midnight', class: 'midnight snack'})
+document.querySelector('#late').replaceWith(replacement)
