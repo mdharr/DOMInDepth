@@ -12,3 +12,9 @@ p.setAttribute('id', 'cool')
 // document.body.querySelector('#original').prepend(p)
 // document.body.querySelector('#original').append(p)
 document.body.querySelector('#original').after(p)
+
+const text = document.createTextNode('hello from a text node!')
+p.before(text)
+
+const comment = document.createComment('hello from a comment node')
+p.after(comment)
