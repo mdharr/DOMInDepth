@@ -1,3 +1,5 @@
+document.body.style.backgroundColor = "#282828"
+document.body.style.color = "#fff"
 /*
     1. Create an HTML file with the a <head>
        tag containing a <title> with some text
@@ -19,3 +21,13 @@
       methods to do this
     ** HINT - Use both Text and Element Nodes
 */
+const p = document.createElement('p')
+p.setAttribute('id', 'intro')
+const comment1 = document.createTextNode('Hello there, nice ')
+const bold = document.createElement('strong')
+bold.textContent = 'to meet '
+const comment2 = document.createTextNode('you!')
+p.append(comment1)
+p.append(bold)
+p.append(comment2)
+document.body.append(p)

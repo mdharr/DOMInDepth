@@ -14,6 +14,6 @@ document.body.style.color = '#fff'
 */
 
 const h1 = document.createElement('h1')
-h1.setAttribute('color', 'blue')
+h1.style.setProperty('color', 'blue')
 h1.textContent = 'My Blog'
 document.body.append(h1)
