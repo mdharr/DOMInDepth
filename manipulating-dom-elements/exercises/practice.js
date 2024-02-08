@@ -27,9 +27,20 @@ document.body.style.color = "#fff";
              child nodes/elements
 */
 
-// IIFE (Immediately Invoked Function Expression)
-(function() {
-   function createElement(tag, props, ...children) {
+(function () {
+   function formatString(input) {
+      if(input.length === 0) {
+         return ''
+      }
+      const firstChar = input[0]
+      const isFirstCharUpperCase = firstChar === firstChar.toUpperCase()
+
+      const formatted = isFirstCharUpperCase ? `-${firstChar.toLowerCase()}` : firstChar
+      const remaining = formatString(input.slice(1))
+      return formatted + remaining
+   }
+
+   function createElement(tag, props, styles, ...children) {
       const element = document.createElement(tag)
       Object.entries(props).forEach(([key, value]) => {
          if(key === 'textContent') {
@@ -38,7 +49,9 @@ document.body.style.color = "#fff";
             element.setAttribute(key, value)
          }
       })
-
+      Object.entries(styles).forEach(([key, value]) => {
+         element.style.setProperty(formatString(key), value)
+      })
       children.forEach(child => {
          if(typeof child === 'string') {
             element.append(document.createTextNode(child))
@@ -49,30 +62,31 @@ document.body.style.color = "#fff";
       return element
    }
 
-   const p = createElement('p', { textContent: 'P Text' })
-   const label = createElement('label', { textContent: 'Input Label' })
-   const input = createElement('input', { type: 'text', value: 'Input text here...' })
-   const div = createElement('div', {}, label, input)
-   const li1 = createElement('li', { textContent: 'List item' })
-   const li2 = createElement('li', { textContent: 'List item' })
-   const li3 = createElement('li', { textContent: 'List item' })
-   const ul = createElement('ul', {}, li1, li2, li3)
-   const nav = createElement('nav', {}, ul)
+   const p = createElement('p', { textContent: 'Paragraph Text' }, { color: 'red', fontFamily: '"Lucida Console", "Courier New", monospace', fontSize: '32px', margin: '0' })
+   const label = createElement('label', { textContent: 'Label Text' }, { color: 'yellow'})
+   const input = createElement('input', { type: 'text', value: 'Input Placeholder Text' }, {})
+   const div = createElement('div', {}, { display: 'flex', flexDirection: 'column'}, label, input)
+   const li1 = createElement('li', { textContent: 'List Item Text' }, {})
+   const li2 = createElement('li', { textContent: 'List Item Text' }, {})
+   const li3 = createElement('li', { textContent: 'List Item Text' }, {})
+   const ul = createElement('ul', {}, { listStyle: 'none', margin: '0', padding: '0' }, li1, li2, li3)
+   const nav = createElement('nav', {}, {}, ul)
 
    const elements = [p, div, nav]
 
    setInterval(() => {
       const randomIndex = Math.floor(Math.random() * elements.length)
-
-      Array.from(document.body.childNodes).forEach(child => {
+      const childNodes = [...document.body.childNodes]
+      childNodes.forEach(child => {
          if(child.nodeType === Node.ELEMENT_NODE) {
             child.style.display = 'none'
          }
       })
+
       if(!document.body.contains(elements[randomIndex])) {
          document.body.append(elements[randomIndex])
       }
-      elements[randomIndex].style.display = 'block'
+
+      elements[randomIndex].style.display = 'flex'
    }, 1000)
 })()
-
