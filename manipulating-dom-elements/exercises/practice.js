@@ -62,7 +62,7 @@ document.body.style.color = "#fff";
       return element
    }
 
-   const p = createElement('p', { textContent: 'Paragraph Text' }, { color: 'red', fontFamily: '"Lucida Console", "Courier New", monospace', fontSize: '32px', margin: '0' })
+   const p = createElement('p', { textContent: 'Paragraph Text' }, { color: 'red', fontFamily: '"Lucida Console", "Courier New", monospace', fontSize: '32px', margin: '0', fontWeight: 'bolder' })
    const label = createElement('label', { textContent: 'Label Text' }, { color: 'yellow'})
    const input = createElement('input', { type: 'text', value: 'Input Placeholder Text' }, {})
    const div = createElement('div', {}, { display: 'flex', flexDirection: 'column'}, label, input)
