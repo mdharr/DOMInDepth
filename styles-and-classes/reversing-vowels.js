@@ -33,7 +33,7 @@ let a = ['a', 'b', ['c', 'd']]
 
 // shallow copy
 
-function makeDeepCopy(arr) {
+function oneLevelShallowCopy(arr) {
     const result = arr.map(element => {
         if (Array.isArray(element)) {
             return element.slice(); // Create a copy of nested arrays
@@ -43,12 +43,27 @@ function makeDeepCopy(arr) {
             return element; // For primitive types, return as is
         }
     });
-    
+
     return result;
 }
 
-let b = makeDeepCopy(a)
+let b = oneLevelShallowCopy(a)
 a[2][0] = 'w'
 console.log(a)
 console.log(b)
 
+function infinitelyDeepCopy(arr) {
+    return arr.map(element => {
+        if (Array.isArray(element)) {
+            return infinitelyDeepCopy(element); // Recursively copy nested arrays
+        } else if (typeof element === 'object' && element !== null) {
+            // Recursively copy nested objects and their properties
+            return Object.keys(element).reduce((acc, key) => {
+                acc[key] = infinitelyDeepCopy(element[key]);
+                return acc;
+            }, {});
+        } else {
+            return element; // For primitive types, return as is
+        }
+    });
+}
