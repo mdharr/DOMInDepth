@@ -14,3 +14,9 @@ document.body.style.color = "#fff"
     4. Make sure to test these in the console and
        confirm the results visually and in the DOM
 */
+
+document.querySelector('h1').style.color = 'blue'
+'blue'
+document.querySelector('h1').style.setProperty('color', 'pink')
+
+document.body.style.backgroundColor = 'purple'
