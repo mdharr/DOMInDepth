@@ -18,3 +18,11 @@ document.body.style.color = "#fff"
     5. Make sure to test these in the console and
        confirm the results visually and in the DOM
 */
+
+document.querySelector('h1').classList.toggle('large')
+
+document.querySelector('h1').classList.toggle('large')
+
+document.querySelector('h1').classList.add('large')
+
+document.querySelector('h1').classList.remove('large')
