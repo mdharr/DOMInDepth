@@ -69,8 +69,28 @@ Problem: Given a 1-indexed array of integers numbers that are already sorted in 
 Approach: Use two pointers starting at the beginning and end of the array, respectively. Move them inward based on whether the sum of their elements is less than or greater than the target.
 */
 
+const intArr = [1,2,3,4,5,6,7,8,9];
 
+function twoSum(arr, target) {
+    let result = [];
+    let left = 0;
+    let right = arr.length-1;
 
+    while (left < right) {
+        if (arr[left] + arr[right] === target) {
+            return [left, right];
+        }
+        
+        if (arr[left] + arr[right] < target) {
+            left++;
+        } else if (arr[left] + arr[right] > target) {
+            right--;
+        }
+        
+    }
+}
+
+// console.log(twoSum(intArr, 12));
 
 /*
 4. Valid Palindrome
