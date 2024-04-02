@@ -53,7 +53,7 @@ function removeDuplicates(input) {
             result[left] = result[right];
         }
     }
-    result.length = left + 1; // truncate to remove duplicates
+    result.length = left + 1; // truncate to remove duplicates (this is important)
     return result;
 }
 
@@ -127,3 +127,35 @@ function isPalindrome(str) {
 Problem: Given two sorted arrays, merge them into one sorted array.
 Approach: Use two pointers, each starting at the beginning of the arrays. Compare the elements at the pointers, add the smaller one to the merged array, and move the pointer in the array from which the element was taken.
 */
+
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [2, 4, 6, 8, 10];
+
+function mergeSortedArrays(arr1, arr2) {
+    let result = [];
+    let pointer1 = 0;
+    let pointer2 = 0;
+
+    while (pointer1 < arr1.length || pointer2 < arr2.length) {
+        if (pointer1 === arr1.length) {
+            // result = result.concat(arr2.slice(pointer2));
+            result.push(...arr2.slice(pointer2));
+            break;
+        } else if (pointer2 === arr2.length) {
+            // result = result.concat(arr1.slice(pointer1));
+            result.push(...arr1.slice(pointer1));
+            break;
+        }
+
+        if (arr1[pointer1] < arr2[pointer2]) {
+            result.push(arr1[pointer1++]);
+        } else if (arr1[pointer1] > arr2[pointer2]) {
+            result.push(arr2[pointer2++]);
+        } else {
+            result.push(arr1[pointer1++], arr2[pointer2++]);
+        }
+    }
+    return result;
+}
+
+console.log(mergeSortedArrays(arr1, arr2));
