@@ -79,9 +79,26 @@ Problem: Given a string, determine if it is a palindrome, considering only alpha
 Approach: Use two pointers to compare characters from the beginning and the end, moving towards the center, and ignore non-alphanumeric characters.
 */
 
-const str = 'happydolucky';
+const str1 = 'happydolucky';
+const str2 = '123456654321';
 
+function isPalindrome(str) {
+    let result = [...str];
+    let left = 0;
+    let right = result.length-1;
 
+    if (result.length < 2) return true;
+
+    while (left < right) {
+        if (result[left] !== result[right]) return false;
+        if (left - right < 1) return true;
+        left++;
+        right--;
+    }
+    return true;
+}
+
+// console.log(isPalindrome(str2));
 
 
 /*
