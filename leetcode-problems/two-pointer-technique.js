@@ -136,17 +136,7 @@ function mergeSortedArrays(arr1, arr2) {
     let pointer1 = 0;
     let pointer2 = 0;
 
-    while (pointer1 < arr1.length || pointer2 < arr2.length) {
-        if (pointer1 === arr1.length) {
-            // result = result.concat(arr2.slice(pointer2));
-            result.push(...arr2.slice(pointer2));
-            break;
-        } else if (pointer2 === arr2.length) {
-            // result = result.concat(arr1.slice(pointer1));
-            result.push(...arr1.slice(pointer1));
-            break;
-        }
-
+    while (pointer1 < arr1.length && pointer2 < arr2.length) {
         if (arr1[pointer1] < arr2[pointer2]) {
             result.push(arr1[pointer1++]);
         } else if (arr1[pointer1] > arr2[pointer2]) {
@@ -155,6 +145,14 @@ function mergeSortedArrays(arr1, arr2) {
             result.push(arr1[pointer1++], arr2[pointer2++]);
         }
     }
+    if (pointer1 === arr1.length) {
+        // result = result.concat(arr2.slice(pointer2));
+        result.push(...arr2.slice(pointer2));
+    } else if (pointer2 === arr2.length) {
+        // result = result.concat(arr1.slice(pointer1));
+        result.push(...arr1.slice(pointer1));
+    }
+
     return result;
 }
 
