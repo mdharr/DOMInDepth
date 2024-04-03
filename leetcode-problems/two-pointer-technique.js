@@ -59,7 +59,7 @@ function removeDuplicates(input) {
 
 const mixedArray = ['a', 1, 'c', 'b', 7, 'z', 5, 'c', 'c', 7, 'e', 'a'];
 
-// const result = removeDuplicates(mixedArray);
+const result = removeDuplicates(mixedArray);
 // console.log(result);
 
 /*
@@ -156,4 +156,84 @@ function mergeSortedArrays(arr1, arr2) {
     return result;
 }
 
-console.log(mergeSortedArrays(arr1, arr2));
+// console.log(mergeSortedArrays(arr1, arr2));
+
+
+
+/* 
+
+6. Squaring a Sorted Array
+
+Problem: Given an array of integers that are sorted in non-decreasing order, return an array of the 
+squares of each number, also sorted in non-decreasing order.
+Approach: Use two pointers, one at the start and one at the end, to square the numbers and place 
+them in the right position in the result array based on their magnitude.
+
+*/
+
+
+
+
+
+
+/* 
+
+7. Dutch National Flag Problem
+
+Problem: Given an array of integers consisting only of 0, 1, and 2, sort the array without 
+using any sorting algorithm.
+Approach: Use three pointers to segregate the elements of the array. The first pointer tracks 
+the end of the zeros, the second pointer tracks the current element, and the third pointer tracks the start of the twos.
+
+*/
+
+
+
+
+
+
+/* 
+
+8. Container With Most Water
+
+Problem: Given an array of integers where each element represents the height of a line
+on the x-axis, find two lines that together with the x-axis form a container, such that 
+the container contains the most water.
+Approach: Start with two pointers at either end of the array and move them towards each 
+other, always moving the pointer pointing to the shorter line to try and find a pair of lines 
+that will hold more water.
+
+*/
+
+
+
+
+
+
+/* 
+
+9. Subarray Product Less Than K
+
+Problem: Given an array of integers and a target product k, find the number of contiguous subarrays 
+where the product of all the elements in the subarray is less than k.
+Approach: Use two pointers to create a sliding window. Expand the window to include more elements 
+until the product of all elements in the window is at least k, then shrink the window from the left 
+to reduce the product and count the number of valid subarrays.
+
+*/
+
+
+
+
+
+
+/* 
+
+10. Longest Substring Without Repeating Characters
+
+Problem: Given a string, find the length of the longest substring without repeating characters.
+Approach: Use two pointers to maintain a sliding window that contains the longest substring 
+without duplicates. Move the right pointer to expand the window and the left pointer to shrink 
+it when a duplicate character is found.
+
+*/
