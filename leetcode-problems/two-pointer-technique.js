@@ -307,7 +307,7 @@ function subarrayProductLessThan(arr, target) {
     return result;
 }
 
-console.log(subarrayProductLessThan(numsArr, k));
+// console.log(subarrayProductLessThan(numsArr, k));
 
 /* 
 
@@ -320,9 +320,25 @@ it when a duplicate character is found.
 
 */
 
+const sampleString = "pwwkewabcdefghijk";
 
+function findLongestSubstringNonRepeating(str) {
+    let longest = 0;
+    let left = 0;
+    let charMap = new Map();
 
+    for (let right = 0; right < str.length; right++) {
+        if (charMap.has(str[right]) && charMap.get(str[right]) >= left) {
+            left = charMap.get(str[right]) + 1;
+        }
+        charMap.set(str[right], right);
+        longest = Math.max(longest, right - left + 1);
+    }
 
+    return longest;
+}
+
+console.log(findLongestSubstringNonRepeating(sampleString));
 
 
 /* 
