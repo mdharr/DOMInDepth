@@ -272,25 +272,42 @@ function findLargestContainer(arr) {
     return maxVolume;
 }
 
-console.log(findLargestContainer(heights));
+// console.log(findLargestContainer(heights));
 
 
 /* 
 
 9. Subarray Product Less Than K
 
-Problem: Given an array of integers and a target product k, find the number of contiguous subarrays 
-where the product of all the elements in the subarray is less than k.
+Problem: Given an array of integers and a target product k, find the number of 
+contiguous subarrays where the product of all the elements in the subarray is less than k.
 Approach: Use two pointers to create a sliding window. Expand the window to include more elements 
 until the product of all elements in the window is at least k, then shrink the window from the left 
 to reduce the product and count the number of valid subarrays.
 
 */
 
+const numsArr = [2, 5, 3, 10, 4, 1, 6];
+const k = 30;
 
+function subarrayProductLessThan(arr, target) {
+    let result = 0;
+    let left = 0;
+    let product = 1;
 
+    for (let right = 0; right < arr.length; right++) {
+        product *= arr[right];
 
+        while (product >= target && left <= right) {
+            product /= arr[left++];
+        }
 
+        result += right - left + 1;
+    }
+    return result;
+}
+
+console.log(subarrayProductLessThan(numsArr, k));
 
 /* 
 
@@ -324,4 +341,4 @@ function reverseInteger(n) {
     return parseInt(reversed) * Math.sign(n);
 }
 
-console.log(reverseInteger(numsOriginal));
+// console.log(reverseInteger(numsOriginal));
