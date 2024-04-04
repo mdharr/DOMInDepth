@@ -204,7 +204,7 @@ the start of the twos.
 
 */
 
-const nums = [2, 0, 1, 2, 1, 0, 0, 2, 1, 1, 0, 2];
+const nums = [2, 0, 1, 2, 1, 0, 0, 2, 1, 1, 0, 2, 0];
 
 function manualSort(arr) {
 
