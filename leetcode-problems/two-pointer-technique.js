@@ -232,7 +232,7 @@ function manualSort(arr) {
 }
 
 // manualSort(nums);
-console.log(manualSort(nums));
+// console.log(manualSort(nums));
 
 
 
@@ -249,9 +249,30 @@ that will hold more water.
 
 */
 
+const heights = [1, 8, 6, 2, 5, 4, 8, 3, 7, 3, 4, 3];
 
+function findLargestContainer(arr) {
+    let maxVolume = 0;
+    let left = 0;
+    let right = arr.length-1;
 
+    while (left < right) {
+        let height = Math.min(arr[left], arr[right]);
+        let width = right - left;
+        let currentVolume = height * width;
+        maxVolume = Math.max(maxVolume, currentVolume);
 
+        if (arr[left] < arr[right]) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+
+    return maxVolume;
+}
+
+console.log(findLargestContainer(heights));
 
 
 /* 
