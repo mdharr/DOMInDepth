@@ -59,7 +59,7 @@ function removeDuplicates(input) {
 
 const mixedArray = ['a', 1, 'c', 'b', 7, 'z', 5, 'c', 'c', 7, 'e', 'a'];
 
-const result = removeDuplicates(mixedArray);
+// const result = removeDuplicates(mixedArray);
 // console.log(result);
 
 /*
@@ -190,7 +190,7 @@ function squareSortedArray(arr) {
     return result;
 }
 
-console.log(squareSortedArray(integersArray));
+// console.log(squareSortedArray(integersArray));
 
 /* 
 
@@ -199,12 +199,40 @@ console.log(squareSortedArray(integersArray));
 Problem: Given an array of integers consisting only of 0, 1, and 2, sort the array without 
 using any sorting algorithm.
 Approach: Use three pointers to segregate the elements of the array. The first pointer tracks 
-the end of the zeros, the second pointer tracks the current element, and the third pointer tracks the start of the twos.
+the end of the zeros, the second pointer tracks the current element, and the third pointer tracks 
+the start of the twos.
 
 */
 
+const nums = [2, 0, 1, 2, 1, 0, 0, 2, 1, 1, 0, 2];
 
+function manualSort(arr) {
 
+    let low = 0;
+    let mid = 0;
+    let high = arr.length-1;
+
+    function swap(i, j) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    while (mid <= high) {
+        if (arr[mid] === 0) {
+            swap(mid++, low++);
+        } else if (arr[mid] === 1) {
+            mid++;
+        } else {
+            swap(mid, high--);
+        }
+    }
+
+    return arr;
+}
+
+// manualSort(nums);
+console.log(manualSort(nums));
 
 
 
