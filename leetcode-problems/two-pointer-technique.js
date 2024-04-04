@@ -302,3 +302,26 @@ without duplicates. Move the right pointer to expand the window and the left poi
 it when a duplicate character is found.
 
 */
+
+
+
+
+
+
+/* 
+
+11. Reverse Integer And Include Sign
+
+Problem: Given an integer, reverse it and include the positive or negative sign
+of the original input.
+
+*/
+
+const numsOriginal = -12345;
+
+function reverseInteger(n) {
+    let reversed = String(n).split('').reverse().join('');
+    return parseInt(reversed) * Math.sign(n);
+}
+
+console.log(reverseInteger(numsOriginal));
