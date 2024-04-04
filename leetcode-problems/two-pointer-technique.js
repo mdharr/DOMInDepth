@@ -171,10 +171,26 @@ them in the right position in the result array based on their magnitude.
 
 */
 
+const integersArray = [-10, -7, -3, -1, 0, 0, 0, 2, 4, 5, 8, 11, 15, 20];
 
+function squareSortedArray(arr) {
+    let result = new Array(arr.length);
+    let left = 0;
+    let right = arr.length-1;
+    let position = arr.length-1;
 
+    while (left <= right) {
+        if (Math.abs(arr[left]) > Math.abs(arr[right])) {
+            result[position--] = arr[left++]**2;
+        } else {
+            result[position--] = arr[right--]**2;
+        }
+    }
 
+    return result;
+}
 
+console.log(squareSortedArray(integersArray));
 
 /* 
 
