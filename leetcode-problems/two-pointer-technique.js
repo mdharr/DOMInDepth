@@ -784,6 +784,68 @@ Example: If the linked list is 1 -> 2 -> 3 -> 4 -> 5, then after reversing, it s
 /*
 
 
+Level Order Traversal of a Binary Tree
+
+Problem: Given a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+Example: Given binary tree [3,9,20,null,null,15,7], return its level order traversal as [[3],[9,20],[15,7]].
+
+
+*/
+
+/*
+
+Graph BFS Traversal
+
+Problem: Given an undirected graph and a starting node, perform a breadth-first search (BFS) traversal starting from the given node.
+Example: Given a graph represented as an adjacency list {0: [1, 2], 1: [2], 2: [0, 3], 3: [3]} and starting node 2, the BFS traversal order would be [2, 0, 3, 1].
+
+
+
+
+*/
+
+/*
+
+Preorder Traversal of a Binary Search Tree
+
+Problem: Given the root of a binary search tree, return the preorder traversal of its nodes' values.
+Example: Given binary search tree [1,null,2,3], return its preorder traversal as [1,2,3].
+
+
+
+
+*/
+
+/*
+
+Find All Numbers Disappeared in an Array
+
+Problem: Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once. Find all the elements of [1, n] inclusive that do not appear in the array.
+Approach: Use an array traversal to mark visited elements in some way (for example, by negating the numbers at the indices corresponding to each value you encounter) and then identify the indices that were never marked.
+Example: Given [4,3,2,7,8,2,3,1], return [5,6].
+
+
+
+
+*/
+
+/*
+
+Postorder Traversal of an N-ary Tree
+
+Problem: Given the root of an N-ary tree, return the postorder traversal of its nodes' values.
+Approach: An N-ary tree is a tree in which any node can have between 0 and N children. The postorder traversal involves visiting the children before the node itself.
+Example: Given an N-ary tree with root node 1 and its children nodes 2, 3, and 4, where node 3 has children 5 and 6, return its postorder traversal as [2,5,6,3,4,1].
+These exercises are designed to improve your understanding of different traversal techniques and how they can be applied to various data structures, from simple arrays to more complex trees and graphs.
+
+
+
+
+*/
+
+/*
+
+
 
 
 
