@@ -358,3 +358,433 @@ function reverseInteger(n) {
 }
 
 // console.log(reverseInteger(numsOriginal));
+
+
+/*
+
+Remove Nth Node From End of List
+
+Problem: Given the head of a linked list, remove the 
+�
+nth node from the end of the list and return its head.
+Approach: Use two pointers, initially separated by 
+�
+n nodes apart, move them simultaneously until the fast pointer reaches the end, then remove the next node of the slow pointer.
+
+
+*/
+
+
+/*
+
+
+
+Three Sum
+
+Problem: Given an array of integers, find all unique triplets in the array which gives the sum of zero.
+Approach: Sort the array and use a combination of two-pointer technique within a loop. For each element, use the other two pointers to find if there is a pair whose sum equals the negation of that element.
+
+
+
+
+
+*/
+
+
+/*
+
+
+
+Maximum Product Subarray
+
+Problem: Given an integer array, find the contiguous subarray within it that has the largest product.
+Approach: While not strictly a two-pointer problem, you can use a modified two-pointer approach to keep track of the maximum and minimum products up to the current position, due to the impact of negative numbers.
+
+
+
+
+
+*/
+
+
+/*
+
+
+
+Linked List Cycle II
+
+Problem: Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
+Approach: Use two pointers, one moving twice as fast as the other. If they meet, move one pointer to the beginning of the list and then move both at the same speed to find the cycle's start.
+
+
+
+
+
+
+*/
+
+
+/*
+
+
+
+Valid Palindrome II
+
+Problem: Given a string, determine if it can become a palindrome through the removal of at most one character.
+Approach: Use two pointers to compare characters from the start and end of the string. If a mismatch is found, check the remaining substrings by skipping one character at either pointer's position to see if either can form a palindrome.
+
+
+
+
+*/
+
+
+/*
+
+
+Backspace String Compare
+
+Problem: Given two strings containing lowercase letters and '#' characters, where '#' represents a backspace, check if the two strings are equal after processing the backspaces.
+Approach: Use two pointers for each string to iterate from the end to the beginning, skipping over characters that are effectively 'backspaced'.
+
+
+
+
+
+*/
+
+
+/*
+
+
+
+Minimum Size Subarray Sum
+
+Problem: Given an array of positive integers and a target sum, find the minimal length of a contiguous subarray of which the sum is greater than or equal to the target sum. If there isn't one, return 0.
+Approach: Use two pointers to create a sliding window, expanding and shrinking the window to find the smallest subarray that meets or exceeds the target sum.
+
+
+
+
+*/
+
+
+/*
+
+
+
+Pair with Given Sum in a Sorted Array
+
+Problem: Given a sorted array and a target sum, find if there exists a pair of elements in the array whose sum is equal to the target sum.
+Approach: Use two pointers, one starting at the beginning and the other at the end of the array. Move the pointers inward based on the sum of the elements they point to, compared to the target sum.
+
+
+
+
+*/
+
+// DESTRUCTURING
+
+/*
+
+
+
+Swap Variables
+
+Problem: Given two variables, swap their values using destructuring.
+Example:
+javascript
+Copy code
+let a = 3;
+let b = 6;
+Swap the values so that a becomes 6 and b becomes 3.
+
+
+
+
+*/
+
+
+/*
+
+
+
+Function Return Multiple Values
+
+Problem: Write a function that returns multiple values as an array, and use destructuring to store the returned values in separate variables.
+Example: Create a function that returns the current date, month, and year, and then destruct the result into separate variables.
+
+
+
+
+*/
+
+
+/*
+
+
+Nested Object Destructuring
+
+Problem: Given a nested object, use object destructuring to extract deeply nested properties.
+Example:
+javascript
+Copy code
+const user = {
+    id: 339,
+    name: 'Fred',
+    age: 42,
+    education: {
+        degree: 'Masters',
+        school: {
+            name: 'Springfield University',
+            year: 2003
+        }
+    }
+};
+Extract the name of the school and the year into separate variables.
+
+
+
+
+
+*/
+
+
+/*
+
+
+
+Array Destructuring with Rest
+
+Problem: Given an array, use array destructuring to assign the first few elements to variables and the remaining elements to an array.
+Example:
+javascript
+Copy code
+const rgb = [255, 200, 0];
+Destructure the array into variables red, green, and an array others holding any remaining elements.
+
+
+
+
+*/
+
+/*
+
+
+Parameter Destructuring in Functions
+
+Problem: Write a function that takes an object as a parameter and uses destructuring in the function signature to directly extract specific properties.
+Example:
+javascript
+Copy code
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 28
+};
+Write a function that takes this person object and extracts firstName and age directly in the parameter list.
+
+
+*/
+
+/*
+
+Sum of All Nodes in a Binary Tree
+
+Problem: Given a binary tree, write a function that returns the sum of all its node values.
+Approach: Use recursion to destructure the tree into its left and right subtrees, summing up the node values at each step.
+
+class TreeNode {
+    constructor(value = 0, left = null, right = null) {
+        this.value = value;
+        this.left = left;
+        this.right = right;
+    }
+}
+
+const tree = new TreeNode(1, 
+                 new TreeNode(2, 
+                     new TreeNode(4), 
+                     new TreeNode(5)), 
+                 new TreeNode(3, 
+                     new TreeNode(6), 
+                     new TreeNode(7))
+             );
+
+
+
+*/
+
+
+
+
+
+
+/*
+
+Serialize and Deserialize a Binary Tree
+
+Problem: Serialization is the process of converting a binary tree into a string representation that can be stored or transmitted and then reconstructed later. Write functions to serialize and deserialize a binary tree.
+Approach: For serialization, use recursion to destructure the tree into nodes and convert it into a string format. For deserialization, reverse the process to reconstruct the tree from the string representation.
+
+// Using the TreeNode class from example 1
+const serializableTree = new TreeNode(1, 
+                             new TreeNode(2, 
+                                 new TreeNode(3), 
+                                 new TreeNode(4)), 
+                             new TreeNode(5, 
+                                 new TreeNode(6), 
+                                 new TreeNode(7))
+                         );
+
+
+
+*/
+
+/*
+
+Convert a Binary Tree to a Linked List
+
+Problem: Given a binary tree, flatten it to a linked list in-place where the left child of all nodes is null, and the right child contains the next node in the preorder traversal.
+Approach: Use recursion to destructure the tree and rearrange the nodes to form a linked list, ensuring the left child is always null and the right child points to the next node in the preorder sequence.
+
+
+4. **Convert a Binary Tree to a Linked List**
+```javascript
+// Using the TreeNode class from example 1
+const treeToConvert = new TreeNode(1, 
+                          new TreeNode(2, 
+                              new TreeNode(3), 
+                              new TreeNode(4)), 
+                          new TreeNode(5, 
+                              null, 
+                              new TreeNode(6))
+                      );
+
+
+
+*/
+
+/*
+
+Find the Maximum Depth of a Binary Tree
+
+Problem: Given a binary tree, find its maximum depth (the number of nodes along the longest path from the root node down to the farthest leaf node).
+Approach: Use recursion to destructure the tree into its left and right subtrees and compute the depth, incrementing at each level.
+
+// Using the TreeNode class from example 1
+const deepTree = new TreeNode(1, 
+                    new TreeNode(2, 
+                        new TreeNode(3, 
+                            new TreeNode(4))), 
+                    new TreeNode(2, 
+                        null, 
+                        new TreeNode(3, 
+                            null, 
+                            new TreeNode(4)))
+                );
+
+
+
+*/
+
+/*
+
+Deep Clone a Nested Object
+
+Problem: Given a deeply nested object, write a function to create a deep clone of it.
+Approach: Recursively destructure the object into its properties and clone them to create a new object that is a deep copy of the original.
+
+
+const nestedObject = {
+    name: "John",
+    age: 30,
+    address: {
+        street: "123 Main St",
+        city: "Anytown",
+        additional: {
+            info: "More details"
+        }
+    }
+};
+
+
+*/
+
+/*
+
+Fibonacci Sequence
+
+Problem: Write a function to compute the 
+�
+nth Fibonacci number. The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1.
+Example: fibonacci(5) should return 5 because the sequence is 0, 1, 1, 2, 3, 5.
+
+
+
+
+*/
+
+/*
+
+
+Tower of Hanoi
+
+Problem: Solve the Tower of Hanoi problem. You are given three rods and a number of disks of different sizes that can slide onto any rod. The puzzle starts with the disks in ascending order of size on one rod, the smallest at the top. The objective is to move the entire stack to another rod, obeying the following rules:
+Only one disk can be moved at a time.
+Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack.
+No disk may be placed on top of a smaller disk.
+Example: Solve the puzzle with 3 disks.
+
+
+*/
+
+/*
+
+All Paths from Source to Target in a Directed Acyclic Graph (DAG)
+
+Problem: Given a directed acyclic graph (DAG) represented as an adjacency list, write a function that returns all possible paths from node 0 to node 
+�
+−
+1
+N−1 where 
+�
+N is the number of nodes in the graph.
+Example: If the adjacency list is [[1,2], [3], [3], []], the function should return [[0,1,3], [0,2,3]].
+
+
+
+
+*/
+
+/*
+
+Binary Search
+
+Problem: Implement a recursive binary search function. Given a sorted array of integers and a target value, return the index of the target if it exists in the array, or -1 if it doesn't.
+Example: Given [1, 2, 3, 4, 5, 6] and target 4, the function should return 3.
+
+
+
+
+*/
+
+/*
+
+Reverse a Linked List
+
+Problem: Given the head of a singly linked list, reverse the list and return the new head using recursion.
+Example: If the linked list is 1 -> 2 -> 3 -> 4 -> 5, then after reversing, it should be 5 -> 4 -> 3 -> 2 -> 1.
+
+
+
+
+*/
+
+/*
+
+
+
+
+
+*/
