@@ -845,6 +845,65 @@ These exercises are designed to improve your understanding of different traversa
 
 /*
 
+Iterating Over Properties of an Object
+
+Problem: Given a JavaScript object, write a function that prints out all its properties and their values using for...in loop.
+Example: Given {name: 'John', age: 30, city: 'New York'}, the function should print name: John, age: 30, city: New York.
+
+
+
+*/
+
+/*
+
+Deep Iteration Over a Nested Object
+
+Problem: Given a deeply nested object, write a function that iterates over all leaf nodes and prints their paths and values. A leaf node is a property that does not contain an object.
+Example: Given {a: 1, b: {c: 2, d: {e: 3}}}, the function should print a: 1, b.c: 2, b.d.e: 3.
+
+
+
+
+*/
+
+/*
+
+
+Iterating Over Characters in a String
+
+Problem: Write a function that iterates over each character in a string and prints out each character and its index.
+Example: Given the string "hello", the function should print "0: h", "1: e", "2: l", "3: l", "4: o".
+
+
+
+*/
+
+/*
+
+
+Iterating Over Elements in a Set
+
+Problem: Given a JavaScript Set, write a function that iterates over the elements of the Set and prints them.
+Example: Given a set with elements [1, 2, 3, 4, 5], the function should print 1, 2, 3, 4, 5.
+
+
+
+*/
+
+/*
+
+
+Iterating Over Key-Value Pairs in a Map
+
+Problem: Given a JavaScript Map, write a function that iterates over the Map and prints out key-value pairs.
+Example: Given a map with key-value pairs [['firstName', 'John'], ['lastName', 'Doe'], ['age', 30]], the function should print "firstName: John", "lastName: Doe", "age: 30".
+
+
+
+*/
+
+/*
+
 
 
 
