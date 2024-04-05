@@ -902,9 +902,172 @@ Example: Given a map with key-value pairs [['firstName', 'John'], ['lastName', '
 
 */
 
+// BASIC EXERCISES FOR PRACTICING BUILD IN METHODS
+
+
+/*
+
+Array Methods
+forEach - Iterate over the array [1, 2, 3, 4, 5] and print each number squared.
+map - Given the array [1, 2, 3, 4, 5], create a new array with each element multiplied by 3.
+filter - From the array [1, 2, 3, 4, 5], create a new array with only odd numbers.
+reduce - Sum all numbers in the array [1, 2, 3, 4, 5].
+find - Find the first element in the array [1, 2, 3, 4, 5] that is greater than 3.
+
+Object Methods
+Object.keys - Print all keys of the object { a: 1, b: 2, c: 3 }.
+Object.values - Print all values of the object { a: 1, b: 2, c: 3 }.
+Object.entries - Convert the object { a: 1, b: 2, c: 3 } into an array of key-value pairs.
+Object.assign - Create a clone of the object { a: 1, b: 2, c: 3 } and add a new property { d: 4 } to it.
+
+Set Methods
+add - Add numbers 1 through 5 to a new Set and print the Set.
+has - Check if the Set from the previous exercise contains the number 3.
+delete - Remove the number 3 from the Set created above and print the result.
+clear - Clear all items from the Set and print its size afterwards.
+
+Map Methods
+set - Create a new Map and add three key-value pairs where keys are "one", "two", "three" and values are 1, 2, 3.
+get - Retrieve the value associated with key "two" from the Map.
+has - Check if the Map has a key "three".
+delete - Remove the key-value pair where the key is "one" from the Map.
+clear - Clear all entries from the Map.
+
+Function Methods
+While functions in JavaScript don't have as diverse a built-in method library as the other types mentioned, there are important concepts and techniques associated with functions:
+
+call - Given a function greet that accepts a name, use call to invoke greet with a specific context and argument.
+apply - Similar to the above, but pass arguments as an array.
+bind - Create a bound function from greet that always uses a specific name.
+
+
+
+*/
+
+
+/* 
+
+Array
+Exercise: Implement a function that takes an array of numbers and returns an array containing only the prime numbers found in the original array, sorted in ascending order.
+Hint: You may need to use filter for selection and sort, and implement a helper function to check if a number is prime.
+
+Object
+Exercise: Write a function that takes an object with keys as names and values as ages. The function should return a new object that includes only the people who are 18 years old or older, and the names should be capitalized.
+Hint: Consider using Object.keys, Object.values, or Object.entries with reduce or filter and map.
+
+Set
+Exercise: Given an array of integers, create a function that returns an array of duplicates found in the array. Use a Set to track seen numbers and duplicates.
+Hint: Iterate over the array, using one Set to keep track of elements you've seen once and another to store duplicates.
+
+Map
+Exercise: Implement a function that takes an array of strings. It should return a Map where each key is a string and its value is the number of times that string appears in the array.
+Hint: Use forEach to iterate over the array and populate the Map, checking if a key already exists and incrementing its value.
+
+Function
+Exercise: Write a function memoize that takes another function as its argument and returns a memoized version of the function. The memoized function should cache the results of function calls with given arguments and return the cached result for subsequent calls with the same arguments.
+Hint: Use a JavaScript object (or a Map) to store results based on a unique key for each set of arguments. Consider JSON-stringifying arguments for a simple key.
+
+*/
+
+// INTERMEDIATE METHOD EXERCISES
+
+/*
+
+Array Methods
+forEach: Given an array of objects where each object has properties name and age, use forEach to print a greeting for each person that says, "Hello, [name]! You are [age] years old."
+
+map: Transform an array of numerical values into an array of objects where each object has the original value and its square (e.g., [2, 3] becomes [{value: 2, square: 4}, {value: 3, square: 9}]).
+
+filter: Given an array of strings, use filter to create a new array that contains only strings that are palindromes.
+
+reduce: Use reduce to find the product of all numbers in an array of numbers.
+
+find: From an array of objects where each object represents a book with properties title and author, use find to get the first book whose title contains a specific keyword.
+
+Object Methods
+Object.keys: Given an object representing a shopping cart where keys are item names and values are quantities, use Object.keys to print a list of items that need to be restocked (quantity less than 3).
+
+Object.values: Use Object.values to calculate the total number of items in the shopping cart object from the previous example.
+
+Object.entries: Given an object where keys are product IDs and values are product names, use Object.entries to create an array of strings that represent each product in the form "Product [ID]: [Name]".
+
+Object.assign: Use Object.assign to merge two objects: one representing a person's personal details and the other representing their professional details.
+
+Set Methods
+add: Create a Set from an array of numbers, then add a new number to it. Use the Set to print unique numbers only.
+
+has: Given a Set of colors (as strings), check if the Set has the color "blue". Print a message based on the result.
+
+delete: Use delete to remove a specific element from a Set of numbers, then print the modified Set.
+
+clear: Demonstrate creating a Set, adding several elements to it, using clear to empty the Set, and then verifying its size is 0.
+
+Map Methods
+set: Create a Map that represents word frequencies in an array of words. Iterate through the array and use set to populate the Map.
+
+get: Given a Map from the previous example, write a function that takes a word as input and uses get to return its frequency.
+
+has: Check if the Map from the word frequency example contains a specific word. Print a message indicating whether the word is present.
+
+delete: Remove a specific word from the word frequency Map, then print the Map to show it's been removed.
+
+clear: Demonstrate using clear to empty the word frequency Map, and verify its size is 0.
+
+Function Method
+bind: Given an object representing a person with properties firstName and lastName, and a function that returns a person’s full name, use bind to create a new function that always returns the full name of the person object provided.
+
+
+
+*/
+
+
+
+// ADVANCED METHODS EXERCISES
 /*
 
 
+Array Methods
+forEach: Implement a custom version of forEach called myForEach that mimics the behavior of the Array's forEach method. Your function should iterate over an array and execute a callback on each element.
+
+map: Create a myMap function that replicates the behavior of the Array's map method. It should apply a given function to every element in the array and return a new array with the results.
+
+filter: Write a myFilter function that imitates the Array's filter method. It should process an array and return a new array containing only the elements that satisfy the condition specified in the callback function.
+
+reduce: Develop a myReduce function that behaves like the Array's reduce method. It should reduce the array to a single value based on the callback function's logic and an optional initial value.
+
+find: Implement a myFind function that replicates the Array's find method, returning the first element in the array that satisfies the provided testing function.
+
+Object Methods
+Object.keys: Write a function that takes an object and returns a deep array of all keys, including nested objects.
+
+Object.values: Create a function to deeply extract all values from an object, including nested objects, and return them in a flat array.
+
+Object.entries: Develop a function that converts an object into a deep array of key-value pairs, including for nested objects.
+
+Object.assign: Implement a deepAssign function that performs a deep copy of objects (including all nested objects) instead of the shallow copy done by Object.assign.
+
+Set Methods
+add: Given an array of strings, create a Set and add each string to the Set. Then, for each string that was already in the Set (duplicate), print a warning that the string is a duplicate and should not be added.
+
+has: Create a Set from a large dataset and implement a search feature that uses the has method to check whether certain elements exist. Measure and print the time it takes to perform these searches.
+
+delete: Implement a function that maintains a Set of active users. The function should periodically delete users from the Set who are no longer active, based on some criteria.
+
+clear: Simulate a real-time scenario where a Set is used to keep track of unique events occurring. Write a function to clear the Set once it reaches a certain size, and log when the clearing happens.
+
+Map Methods
+set: Create a caching mechanism for a function where results of expensive computations are stored in a Map. Use set to save the results and get to retrieve them when the same inputs are used.
+
+get: Implement a nested Map structure where a getDeep function can retrieve values using an array of keys representing the path to the value.
+
+has: Write a function that checks a Map for the presence of multiple keys (provided in an array) and returns true only if all keys exist.
+
+delete: Given a Map representing a directory structure where keys are paths and values are file contents, implement a deletePath function that removes a path and all its subpaths.
+
+clear: Create a Map to manage subscriptions. Implement a function to clear all subscriptions that have expired, using the clear method.
+
+Function Method
+bind: Write a polyfill for the bind function that replicates all its functionality, including setting the this context and prefilling arguments.
 
 
 
