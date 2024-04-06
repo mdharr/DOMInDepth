@@ -354,7 +354,8 @@ const numsOriginal = -12345;
 
 function reverseInteger(n) {
     let reversed = String(n).split('').reverse().join('');
-    return parseInt(reversed) * Math.sign(n);
+    console.log(reversed);
+    return parseInt(reversed) * Math.sign(n); // Math.sign() prepends the number with original sign
 }
 
 // console.log(reverseInteger(numsOriginal));
@@ -365,10 +366,8 @@ function reverseInteger(n) {
 Remove Nth Node From End of List
 
 Problem: Given the head of a linked list, remove the 
-�
 nth node from the end of the list and return its head.
 Approach: Use two pointers, initially separated by 
-�
 n nodes apart, move them simultaneously until the fast pointer reaches the end, then remove the next node of the slow pointer.
 
 
