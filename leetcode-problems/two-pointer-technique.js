@@ -78,6 +78,8 @@ function twoSum(arr, target) {
 
     while (left < right) {
         if (arr[left] + arr[right] === target) {
+            result = [arr[left], arr[right]];
+            // console.log(result);
             return [left, right];
         }
         
@@ -86,11 +88,10 @@ function twoSum(arr, target) {
         } else if (arr[left] + arr[right] > target) {
             right--;
         }
-        
     }
 }
 
-// console.log(twoSum(intArr, 12));
+// twoSum(intArr, 12);
 
 /*
 4. Valid Palindrome
@@ -157,6 +158,35 @@ function mergeSortedArrays(arr1, arr2) {
 }
 
 // console.log(mergeSortedArrays(arr1, arr2));
+
+
+
+
+function mergeSortedArrays2(arr1, arr2) {
+    let result = [];
+    let pointer1 = 0;
+    let pointer2 = 0;
+
+    while (pointer1 < arr1.length && pointer2 < arr2.length) {
+        if (arr1[pointer1] < arr2[pointer2]) {
+            result.push(arr1[pointer1++]);
+        } else if (arr1[pointer1] > arr2[pointer2]) {
+            result.push(arr2[pointer2++]);
+        } else {
+            result.push(arr1[pointer1++], arr2[pointer2++]);
+        }
+    }
+
+    if (pointer1 === arr1.length) {
+        result.push(...arr2.slice(pointer2));
+    } else if (pointer2 === arr2.length) {
+        result.push(...arr1.slice(pointer1));
+    }
+    return result;
+}
+
+
+// console.log(mergeSortedArrays2(arr1, arr2));
 
 
 
@@ -234,7 +264,31 @@ function manualSort(arr) {
 // manualSort(nums);
 // console.log(manualSort(nums));
 
+function manualSort2(arr) {
+    let low = 0;
+    let mid = 0;
+    let high = arr.length-1;
 
+    function swap(i, j) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    while (mid <= high) {
+        if (arr[mid] === 0) {
+            swap(mid++, low++);
+        } else if (arr[mid] === 1) {
+            mid++;
+        } else  {
+            swap(mid, high--);
+        }
+    }
+    return arr;
+}
+
+// manualSort2(nums);
+// console.log(manualSort2(nums));
 
 /* 
 
@@ -273,6 +327,30 @@ function findLargestContainer(arr) {
 }
 
 // console.log(findLargestContainer(heights));
+
+
+function findLargestContainer2(arr) {
+    let maxVolume = 0;
+    let left = 0;
+    let right = arr.length-1;
+
+    while (left < right) {
+        let height = Math.min(arr[left], arr[right]);
+        let width = right - left;
+        let currentVolume = height * width;
+        maxVolume = Math.max(maxVolume, currentVolume);
+
+        if (arr[left] < arr[right]) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+    return maxVolume;
+}
+
+// findLargestContainer2(heights);
+// console.log(findLargestContainer2(heights));
 
 
 /* 
@@ -338,7 +416,7 @@ function findLongestSubstringNonRepeating(str) {
     return longest;
 }
 
-console.log(findLongestSubstringNonRepeating(sampleString));
+// console.log(findLongestSubstringNonRepeating(sampleString));
 
 
 /* 
@@ -376,18 +454,70 @@ n nodes apart, move them simultaneously until the fast pointer reaches the end, 
 
 /*
 
-
-
 Three Sum
 
 Problem: Given an array of integers, find all unique triplets in the array which gives the sum of zero.
 Approach: Sort the array and use a combination of two-pointer technique within a loop. For each element, use the other two pointers to find if there is a pair whose sum equals the negation of that element.
 
-
-
-
-
 */
+
+const threeSumNums = [-4, 4, -1, -1, 0, 1, 2, -1, 2];
+
+// function threeSum(arr) {
+//     let sortedArray = arr.sort((a, b) => a - b);
+//     let result = [];
+
+//     for (let i = 0; i < sortedArray.length - 2; i++) {
+//         // Skip duplicate values
+//         if (i > 0 && sortedArray[i] === sortedArray[i - 1]) continue;
+
+//         let left = i + 1;
+//         let right = sortedArray.length - 1;
+
+//         while (left < right) {
+//             const sum = sortedArray[i] + sortedArray[left] + sortedArray[right];
+//             if (sum === 0) {
+//                 result.push([sortedArray[i], sortedArray[left], sortedArray[right]]);
+//                 // Skip duplicates for left and right
+//                 while (sortedArray[left] === sortedArray[left + 1]) left++;
+//                 while (sortedArray[right] === sortedArray[right - 1]) right--;
+//                 left++;
+//                 right--;
+//             } else if (sum < 0) {
+//                 left++;
+//             } else { // sum > 0
+//                 right--;
+//             }
+//         }
+//     }
+//     console.log(result);
+//     return result;
+// }
+
+function threeSum(arr, target) {
+    const sorted = [...arr].sort((a, b) => a - b);
+    const result = [];
+
+    for (let i = 0; i < sorted.length-2; i++) {
+        if (i > 0 && sorted[i] === sorted[i-1]) continue;
+
+        let left = i + 1;
+        let right = sorted.length;
+
+        while (left < right) {
+            const sum = sorted[i] + sorted[left] + sorted[right];
+            if (sum === target) {
+                result.push([sorted[i], sorted[left], sorted[right]]);
+                while (sorted[left] === sorted[left+1]) left++;
+                while (sorted[right] === sorted[right-1]) right--;
+                
+            }
+        }
+    }
+}
+
+threeSum(threeSumNums);
+
 
 
 /*

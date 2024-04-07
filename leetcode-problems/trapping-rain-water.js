@@ -1,33 +1,33 @@
-var trap = function(height) {
-    if (height.length === 0) return 0;
+// var trap = function(height) {
+//     if (height.length === 0) return 0;
 
-    let result = 0;
-    let left = 0;
-    let right = height.length-1;
-    let maxLeft = height[left];
-    let maxRight = height[right];
+//     let result = 0;
+//     let left = 0;
+//     let right = height.length-1;
+//     let maxLeft = height[left];
+//     let maxRight = height[right];
 
-    while (left < right) {
-        if (maxLeft < maxRight) {
-            left++;
-            maxLeft = Math.max(maxLeft, height[left]);
-            result += maxLeft - height[left];
-        } else {
-            right--;
-            maxRight = Math.max(maxRight, height[right]);
-            result += maxRight - height[right];
-        }
-    }
-    return result;
-};
+//     while (left < right) {
+//         if (maxLeft < maxRight) {
+//             left++;
+//             maxLeft = Math.max(maxLeft, height[left]);
+//             result += maxLeft - height[left];
+//         } else {
+//             right--;
+//             maxRight = Math.max(maxRight, height[right]);
+//             result += maxRight - height[right];
+//         }
+//     }
+//     return result;
+// };
 
-const height1 = [0,1,0,2,1,0,1,3,2,1,2,1]; // expects 6
-const height2 = [4,2,0,3,2,5]; // expects 9
-const height3 = [0,1,2,1,2]; // expects 1
+// const height1 = [0,1,0,2,1,0,1,3,2,1,2,1]; // expects 6
+// const height2 = [4,2,0,3,2,5]; // expects 9
+// const height3 = [0,1,2,1,2]; // expects 1
 
-console.log(trap(height1));
-console.log(trap(height2));
-console.log(trap(height3));
+// console.log(trap(height1));
+// console.log(trap(height2));
+// console.log(trap(height3));
 
 /*
 
@@ -62,3 +62,36 @@ result now equals the difference between new maxRight and new value at right poi
 
 
 */
+
+
+function trap(height) {
+    if (height.length === 0) return 0;
+
+    let result = 0;
+    let left = 0;
+    let right = height.length-1;
+    let maxLeft = height[left];
+    let maxRight = height[right];
+
+    while (left < right) {
+        if (maxLeft < maxRight) {
+            left++;
+            maxLeft = Math.max(maxLeft, height[left]);
+            result += maxLeft - height[left];
+        } else {
+            right--;
+            maxRight = Math.max(maxRight, height[right]);
+            result += maxRight - height[right];
+        }
+    }
+    return result;
+}
+
+
+const height1 = [0,1,0,2,1,0,1,3,2,1,2,1]; // expects 6
+const height2 = [4,2,0,3,2,5]; // expects 9
+const height3 = [0,1,2,1,2]; // expects 1
+
+console.log(trap(height1));
+console.log(trap(height2));
+console.log(trap(height3));
