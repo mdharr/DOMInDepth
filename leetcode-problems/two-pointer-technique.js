@@ -451,6 +451,182 @@ n nodes apart, move them simultaneously until the fast pointer reaches the end, 
 
 */
 
+// class ListNode {
+//     constructor(value = 0, next = null) {
+//         this.value = value;
+//         this.next = next;
+//     }
+// }
+
+// class LinkedList {
+//     constructor() {
+//         this.head = null;
+//     }
+
+//     append(value) {
+//         if (!this.head) {
+//             this.head = new ListNode(value);
+//         } else {
+//             let current = this.head;
+//             while (current.next) {
+//                 current = current.next;
+//             }
+//             current.next = new ListNode(value);
+//         }
+//     }
+
+//     delete(value) {
+//         if (!this.head) return;
+//         if (this.head.value === value) {
+//             this.head = this.head.next;
+//             return;
+//         }
+
+//         let current = this.head;
+//         while (current.next && current.next.value !== value) {
+//             current = current.next;
+//         }
+
+//         if (current.next) {
+//             current.next = current.next.next;
+//         }
+//     }
+
+//     print() {
+//         let current = this.head;
+//         while (current) {
+//             console.log(current.value);
+//             current = current.next;
+//         }
+//     }
+
+// }
+
+// const list = new LinkedList();
+// list.append(1);list.append(2);list.append(3);list.append(4);list.append(5);list.append(6);list.append(7);list.append(8);list.append(9);list.append(10);
+
+// function removeNthFromEnd(head, n) {
+//     let dummy = new ListNode(0);
+//     dummy.next = head;
+//     let fast = dummy;
+//     let slow = dummy;
+
+//     for (let i = 0; i <= n; i++) {
+//         // console.log("Value of i:", i);
+//         // console.log("Fast before:", fast.value);
+//         fast = fast.next;
+//         // console.log("Fast after:", fast.value);
+//     }
+
+//     while (fast !== null) {
+//         // console.log("While Slow Not Null Before:", slow.value);
+//         slow = slow.next;
+//         // console.log("While Slow Not Null After:", slow.value);
+//         fast = fast.next;
+//     }
+
+//     slow.next = slow.next.next;
+//     return dummy.next;
+// }
+
+// removeNthFromEnd(list.head, 4);
+// list.print();
+
+
+
+
+// class ListNode {
+//     constructor(value = 0, next = null) {
+//         this.value = value;
+//         this.next = next;
+//     }
+// }
+
+// class LinkedList {
+//     constructor() {
+//         this.head = null;
+//     }
+
+//     append(value) {
+//         if (!this.head) {
+//             this.head = new ListNode(value);
+//         } else {
+//             let current = this.head;
+//             while (current.next) {
+//                 current = current.next;
+//             }
+//             current.next = new ListNode(value);
+//         }
+//     }
+
+//     delete(value) {
+//         if (!this.head) return;
+//         if (this.head.value === value) {
+//             this.head = this.head.next;
+//         } else {
+//             let current = this.head;
+//             while (current.next && current.next.value !== value) {
+//                 current = current.next;
+//             }
+
+//             if (current.next) {
+//                 current.next = current.next.next;
+//             }
+//         }
+//     }
+
+//     print() {
+//         if (!this.head) return;
+
+//         let current = this.head;
+//         while (current) {
+//             console.log(current.value);
+//             current = current.next;
+//         }
+//     }
+// }
+
+// const list = new LinkedList();
+// list.append(1);
+// list.append(2);
+// list.append(3);
+// list.append(4);
+// list.append(5);
+// list.append(6);
+// list.append(7);
+// list.append(8);
+// list.append(9);
+// list.append(10);
+
+// list.print();
+
+// function deleteNthNodeFromEnd(head, n) {
+//     let dummy = new ListNode(0);
+//     dummy.next = head;
+//     let fast = dummy;
+//     let slow = dummy;
+
+//     for (let i = 0; i <= n; i++) {
+//         fast = fast.next;
+//     }
+
+//     while (fast !== null) {
+//         slow = slow.next;
+//         fast = fast.next;
+//     }
+
+//     slow.next = slow.next.next;
+//     return dummy.next;
+// }
+
+// deleteNthNodeFromEnd(list.head, 5);
+
+// list.print();
+
+
+
+
+
 
 /*
 
@@ -502,7 +678,7 @@ function threeSum(arr, target) {
         if (i > 0 && sorted[i] === sorted[i-1]) continue;
 
         let left = i + 1;
-        let right = sorted.length;
+        let right = sorted.length - 1;
 
         while (left < right) {
             const sum = sorted[i] + sorted[left] + sorted[right];
@@ -510,13 +686,20 @@ function threeSum(arr, target) {
                 result.push([sorted[i], sorted[left], sorted[right]]);
                 while (sorted[left] === sorted[left+1]) left++;
                 while (sorted[right] === sorted[right-1]) right--;
-                
+                left++;
+                right++;
+            } else if (sum < 0) {
+                left++;
+            } else {
+                right--;
             }
         }
     }
+    console.log(result);
+    return result;
 }
 
-threeSum(threeSumNums);
+// threeSum(threeSumNums, 0);
 
 
 
