@@ -54,6 +54,49 @@ class Stack {
     size() {
         return this.count;
     }
+
+    isEmpty() {
+        return this.count === 0;
+    }
+
+    clear() {
+        this.storage = {};
+        this.count = 0;
+    }
+
+    toString() {
+        let result = '';
+        for (let i = 0; i < this.count; i++) {
+            result += this.storage[i] + ' ';
+        }
+        return result.trim();
+    }
+
+    toArray() {
+        let array = [];
+        for (let i = 0; i < this.count; i++) {
+            array.push(this.storage[i]);
+        }
+        return array;
+    }
+
+    contains(element) {
+        for (let i = 0; i < this.count; i++) {
+            if (this.storage[i] === element) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    search(element) {
+        for (let i = this.count - 1; i >= 0; i--) {
+            if (this.storage[i] === element) {
+                return this.count - i;
+            }
+        }
+        return -1;  // Element not found
+    }
 }
 
 const newStack = new Stack();
