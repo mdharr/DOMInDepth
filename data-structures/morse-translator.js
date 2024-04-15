@@ -36,10 +36,10 @@ function createKey(morse, letters) {
 }
 
 function stringToArray(str) {
-    let result = str.toLowerCase().split(",");
+    let result = str.split(",");
     return result;
 }
 
 const message = decipher(code);
 
-console.log(message.toUpperCase());
+console.log(message);
