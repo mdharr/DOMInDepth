@@ -30,31 +30,46 @@ const numArr = [1, 2, 3, 4];
 //     return result;
 // }
 
-const findProductOfArrayExceptSelf = (nums) => {
-    const length = nums.length;
-    let result = new Array(length);
-    let leftProducts = new Array(length);
-    let rightProducts = new Array(length);
+// const findProductOfArrayExceptSelf = (nums) => {
+//     const length = nums.length;
+//     let result = new Array(length);
+//     let leftProducts = new Array(length);
+//     let rightProducts = new Array(length);
 
-    if (nums.length === 0) return [];
-    if (nums.length === 1) return nums[0];
+//     if (nums.length === 0) return [];
+//     if (nums.length === 1) return nums[0];
 
-    leftProducts[0] = 1;
-    for (let i = 1; i < nums.length; i++) {
-        leftProducts[i] = nums[i-1] * leftProducts[i-1];
-    }
+//     leftProducts[0] = 1;
+//     for (let i = 1; i < nums.length; i++) {
+//         leftProducts[i] = nums[i-1] * leftProducts[i-1];
+//     }
 
-    rightProducts[length - 1] = 1;
-    for (let i = length - 2; i >= 0; i--) {
-        rightProducts[i] = nums[i+1] * rightProducts[i+1];
-    }
+//     rightProducts[length - 1] = 1;
+//     for (let i = length - 2; i >= 0; i--) {
+//         rightProducts[i] = nums[i+1] * rightProducts[i+1];
+//     }
+
+//     for (let i = 0; i < nums.length; i++) {
+//         result[i] = leftProducts[i] * rightProducts[i];
+//     }
+
+//     return result;
+// }
+
+const productExceptSelf = (nums) => {
+    const result = [];
+    let prefix = 1;
+    let postfix = 1;
 
     for (let i = 0; i < nums.length; i++) {
-        result[i] = leftProducts[i] * rightProducts[i];
+        result[i] = prefix;
+        result[i] *= nums[i];
     }
 
-    return result;
+    for (let i = nums.length - 2; i >= 0; i--) {
+        postfix *= 1;
+    }
 }
 
-console.log(findProductOfArrayExceptSelf(numArr));
+console.log(productExceptSelf(numArr));
 
