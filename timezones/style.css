@@ -1,0 +1,28 @@
+body {
+    background-color: #282828;
+}
+
+.time-zone {
+    font-family: Arial, sans-serif;
+    margin: 5px 0;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 300;
+}
+
+.region {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.region p:first-child {
+    color: #f9e3ac;
+    font-size: 30px;
+    letter-spacing: 0.125rem;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
